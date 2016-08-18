@@ -27,20 +27,20 @@ if (token) {
 }
 
 controller.on('bot_channel_join', function (bot, message) {
-  bot.reply(message, "I'm here!")
+  bot.reply(message, "Olá! Cheguei!")
 })
 
-controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, 'Hello.')
+controller.hears(['hello', 'hi', 'Olá', 'Oi'], ['direct_mention'], function (bot, message) {
+  bot.reply(message, 'Olá.')
 })
 
-controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'Hello.')
-  bot.reply(message, 'It\'s nice to talk to you directly.')
+controller.hears(['hello', 'hi', 'Olá', 'Oi'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'Olá!')
+  bot.reply(message, 'Como vai você?')
 })
 
 controller.hears('.*', ['mention'], function (bot, message) {
-  bot.reply(message, 'You really do care about me. :heart:')
+  bot.reply(message, 'Obrigado por se importar comigo. :heart:')
 })
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
@@ -72,5 +72,5 @@ controller.hears(['attachment'], ['direct_message', 'direct_mention'], function 
 })
 
 controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
-  bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n')
+  bot.reply(message, 'Desculpa <@' + message.user + '>, ainda estou aprendendo como as coisas funcionam... \n')
 })
